@@ -1,0 +1,19 @@
+# RawHost
+
+> Offshore bulletproof VPS hosting based in Slovenia. Zero logs, DMCA-ignored, anonymous crypto payments (BTC, XMR, USDT). Enterprise-grade network with 1 Gbps uplink included in all plans.
+
+## Services
+
+- [VPS Plans](https://rawhost.net/#pricing): Offshore virtual private servers — Basic (Linux) and Premium (Windows/Linux) tiers, hourly or monthly billing.
+- [Proxies](https://proxy.rawhost.net): High-quality residential and datacenter proxies.
+
+## Pages
+
+- [Home](https://rawhost.net/): Landing page with plans, features and network specs.
+- [Register](https://rawhost.net/register): Create an account to order a VPS.
+- [Login](https://rawhost.net/login): Access the client dashboard.
+- [Terms of Service](https://rawhost.net/terms): Acceptable use policy and service terms.
+
+## Contact
+
+- Telegram: [@rawhost](https://t.me/rawhost)

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "install-docker",
+    "name": "Install Docker",
+    "description": "Docker CE + Compose plugin",
+    "category": "Containers",
+    "icon": "fab fa-docker",
+    "os_compat": ["debian", "ubuntu", "raspbian"],
+    "remote_file": "remote/install-docker.sh",
+    "estimated_time": "2-5 min",
+    "requires_root": true
+  },
+  {
+    "id": "uninstall-docker",
+    "name": "Uninstall Docker",
+    "description": "Elimina Docker CE, Compose y todos los datos",
+    "category": "Containers",
+    "icon": "fab fa-docker",
+    "os_compat": ["debian", "ubuntu", "raspbian"],
+    "remote_file": "remote/uninstall-docker.sh",
+    "estimated_time": "< 1 min",
+    "requires_root": true
+  },
+  {
+    "id": "minecraft-server",
+    "name": "Minecraft Server",
+    "description": "Paper · Vanilla · Fabric · Forge via Docker Compose",
+    "category": "Game Servers",
+    "icon": "fas fa-cubes",
+    "os_compat": ["debian", "ubuntu", "raspbian"],
+    "remote_file": "remote/minecraft-server.sh",
+    "estimated_time": "3-8 min",
+    "requires_root": true,
+    "args": [
+      {
+        "id": "MC_VERSION",
+        "label": "Minecraft Version",
+        "type": "select",
+        "options": [
+          {"value": "LATEST", "label": "Latest (auto)"},
+          {"value": "1.21.4", "label": "1.21.4"},
+          {"value": "1.21.3", "label": "1.21.3"},
+          {"value": "1.21.1", "label": "1.21.1"},
+          {"value": "1.20.6", "label": "1.20.6"},
+          {"value": "1.20.4", "label": "1.20.4"},
+          {"value": "1.20.1", "label": "1.20.1"},
+          {"value": "1.19.4", "label": "1.19.4"},
+          {"value": "1.18.2", "label": "1.18.2"},
+          {"value": "1.16.5", "label": "1.16.5"}
+        ],
+        "default": "LATEST"
+      },
+      {
+        "id": "SERVER_TYPE",
+        "label": "Server Type",
+        "type": "select",
+        "options": [
+          {"value": "PAPER",   "label": "Paper (recommended)"},
+          {"value": "VANILLA", "label": "Vanilla"},
+          {"value": "FABRIC",  "label": "Fabric (mods)"},
+          {"value": "FORGE",   "label": "Forge (mods)"}
+        ],
+        "default": "PAPER"
+      },
+      {
+        "id": "ONLINE_MODE",
+        "label": "Mojang Authentication",
+        "type": "select",
+        "options": [
+          {"value": "true",  "label": "Enabled — premium accounts only"},
+          {"value": "false", "label": "Disabled — any account (cracked)"}
+        ],
+        "default": "true"
+      },
+      {
+        "id": "MEMORY",
+        "label": "Memory",
+        "type": "select",
+        "options": [
+          {"value": "1G", "label": "1 GB"},
+          {"value": "2G", "label": "2 GB"},
+          {"value": "4G", "label": "4 GB"},
+          {"value": "6G", "label": "6 GB"},
+          {"value": "8G", "label": "8 GB"}
+        ],
+        "default": "2G"
+      }
+    ]
+  },
+  {
+    "id": "minecraft-delete",
+    "hidden": true,
+    "name": "Delete Minecraft Server",
+    "description": "Para y elimina el Docker container de Minecraft",
+    "category": "Game Servers",
+    "icon": "fas fa-trash-alt",
+    "os_compat": ["debian", "ubuntu", "raspbian"],
+    "remote_file": "remote/minecraft-delete.sh",
+    "estimated_time": "< 1 min",
+    "requires_root": true,
+    "args": [
+      {
+        "id": "DELETE_DATA",
+        "label": "Delete Data Directory?",
+        "type": "select",
+        "options": [
+          {"value": "false", "label": "No — Keep my worlds and settings"},
+          {"value": "true",  "label": "Yes — Delete everything permanently"}
+        ],
+        "default": "false"
+      }
+    ]
+  }
+]

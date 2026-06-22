@@ -1,0 +1,159 @@
+.tab-bar {
+    display: flex;
+    gap: 4px;
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 24px;
+    width: fit-content;
+}
+
+.tab-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--admin-muted);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.18s;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.tab-btn:hover { color: var(--admin-text); }
+
+.tab-btn.active {
+    background: var(--admin-card);
+    color: var(--admin-text);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.tg-filter-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--admin-border);
+    background: var(--admin-surface);
+    color: var(--admin-muted);
+    font-size: 0.83rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.tg-filter-label:has(input:checked) {
+    background: var(--admin-card);
+    color: var(--admin-text);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 1px var(--primary);
+}
+.tg-filter-label input[type="radio"] { display: none; }
+
+/* ── Tabla compacta ────────────────────────────────────────── */
+#panel-users .admin-table th,
+#panel-users .admin-table td {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+}
+#panel-users .admin-table th { font-size: 0.75rem; }
+
+.col-id,
+.col-usuario,
+.col-email,
+.col-rol,
+.col-tg,
+.col-saldo,
+.col-fecha,
+.col-actions { width: 1%; white-space: nowrap; }
+
+.col-id      { color: var(--admin-muted); font-size: 0.75rem; }
+.col-tg      { text-align: center; }
+.col-actions { text-align: center; }
+
+.col-usuario .cell-text,
+.col-email   .cell-text {
+    display: block;
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ── Botón Ver detalle ─────────────────────────────────────── */
+.btn-view-user {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; height: 30px;
+    border-radius: 7px;
+    font-size: 0.85rem;
+    border: none;
+    cursor: pointer;
+    background: var(--primary);
+    color: #fff;
+    transition: opacity .15s;
+}
+.btn-view-user:hover { opacity: .85; }
+
+/* ── Dropdown ⋮ ────────────────────────────────────────────── */
+.user-actions { display: flex; align-items: center; gap: 6px; }
+
+.dropdown-wrap { position: relative; }
+
+.btn-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; height: 32px;
+    border-radius: 7px;
+    font-size: 1rem;
+    border: 1px solid rgba(255,255,255,.1);
+    cursor: pointer;
+    background: rgba(255,255,255,.06);
+    color: var(--admin-text);
+    transition: background .15s;
+}
+.btn-more:hover { background: rgba(255,255,255,.12); }
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 4px);
+    min-width: 180px;
+    background: #1e2535;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.4);
+    z-index: 999;
+    overflow: hidden;
+}
+.dropdown-menu.open { display: block; }
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 14px;
+    font-size: 0.82rem;
+    color: var(--admin-text);
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    transition: background .12s;
+}
+.dropdown-item:hover { background: rgba(255,255,255,.06); }
+.dropdown-item i { width: 14px; text-align: center; }
+.dropdown-item.danger { color: #f87171; }
+.dropdown-item.danger:hover { background: rgba(248,113,113,.08); }
+.dropdown-divider { height: 1px; background: rgba(255,255,255,.07); margin: 3px 0; }

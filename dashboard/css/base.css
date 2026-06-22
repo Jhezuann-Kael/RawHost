@@ -1,0 +1,9 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0e1628 0%, #090f1e 100%);
+    color: var(--text-light);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}

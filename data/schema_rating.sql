@@ -1,0 +1,6 @@
+ALTER TABLE tickets
+ADD COLUMN rating ENUM(
+    'VERY_GOOD',
+    'GOOD',
+    'NOT_GOOD'
+) DEFAULT NULL;

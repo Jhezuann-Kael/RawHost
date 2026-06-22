@@ -1,0 +1,160 @@
+/* OS selection cards */
+.grid-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.os-option-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.os-option-card:hover   { background: rgba(255, 255, 255, 0.1); transform: translateY(-2px); }
+.os-option-card.selected {
+    border-color: var(--primary);
+    background: rgba(37, 99, 235, 0.1);
+    box-shadow: 0 0 12px rgba(37, 99, 235, 0.2);
+}
+
+.os-icon         { font-size: 2rem; margin-bottom: 6px; }
+.os-name         { font-weight: 600; font-size: 0.85rem; }
+.os-windows .os-icon { color: #00a4ef; }
+.os-ubuntu .os-icon  { color: #e95420; }
+
+/* Upgrade / Renew modal */
+#upgradeModal .modal { max-width: 900px; width: 95%; }
+
+.duration-box {
+    cursor: pointer;
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+.duration-box.selected {
+    border-color: var(--primary) !important;
+    background: rgba(37, 99, 235, 0.2) !important;
+}
+
+.plan-option {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.plan-option:hover   { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.2); }
+.plan-option.selected { border-color: var(--primary); background: rgba(37, 99, 235, 0.1); }
+
+.plan-option-name  { font-weight: 600; font-size: 0.9rem; color: var(--text-light); }
+.plan-option-price { color: var(--primary); font-weight: 700; font-size: 0.95rem; }
+
+/* Upgrade plans grid */
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    padding: 3px;
+}
+
+.plan-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 120px;
+}
+.plan-card:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.plan-card.selected {
+    border-color: var(--primary);
+    background: rgba(37, 99, 235, 0.1);
+    box-shadow: 0 0 12px rgba(37, 99, 235, 0.2);
+}
+
+.plan-name  { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--text-light); }
+.plan-specs { margin-bottom: 12px; font-size: 0.8rem; color: var(--text-muted); }
+.plan-specs div { margin-bottom: 3px; display: flex; align-items: center; gap: 6px; }
+.plan-price { font-size: 1.1rem; font-weight: 700; color: var(--primary); text-align: right; }
+
+/* VNC fullscreen modal */
+.vnc-modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 3000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.vnc-modal-overlay.active { display: flex; }
+
+.vnc-modal-content {
+    width: 95%; height: 95%;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.vnc-modal-header {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vnc-modal-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+/* Main tabs (inside VNC modal) */
+.main-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-tab {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-bottom: 2px solid transparent;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.main-tab:hover  { color: var(--text-light); }
+.main-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+.tab-content-area        { display: none; }
+.tab-content-area.active { display: block; }

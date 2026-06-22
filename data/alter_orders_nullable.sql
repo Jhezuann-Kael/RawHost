@@ -1,0 +1,1 @@
+ALTER TABLE orders MODIFY COLUMN duration INT NULL;

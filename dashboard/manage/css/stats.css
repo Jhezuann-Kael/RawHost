@@ -1,0 +1,34 @@
+/* Stats tabs */
+.stats-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stats-tab {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-bottom: 2px solid transparent;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.stats-tab:hover  { color: var(--text-light); }
+.stats-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+.stats-content { padding: 15px 0; }
+
+.stats-panel {
+    display: none;
+    min-height: 250px;
+    max-height: 280px;
+}
+.stats-panel.active   { display: block; }
+.stats-panel canvas   { max-height: 280px; }

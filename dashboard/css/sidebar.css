@@ -1,0 +1,223 @@
+/* ── Sidebar ── */
+.sidebar {
+    width: 260px;
+    background: #060d1a;
+    border-right: 1px solid rgba(99, 102, 241, 0.14);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* ── Logo ── */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #f8fafc;
+    padding: 20px 18px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.logo img {
+    flex-shrink: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 14px rgba(99, 102, 241, 0.35);
+}
+
+/* ── Nav menu ── */
+.menu {
+    list-style: none;
+    flex: 1;
+    padding: 10px 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.menu li {
+    margin: 0;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    color: #8b9ab5;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background .15s, color .15s;
+    position: relative;
+}
+
+.menu a:hover {
+    background: rgba(99, 102, 241, 0.1);
+    color: #c8d5ea;
+}
+
+/* Active: sólido, legible, imposible de no notar */
+.menu a.active {
+    background: var(--primary);
+    color: #f0f4fa;
+    font-weight: 600;
+    box-shadow: 0 2px 12px rgba(99, 102, 241, 0.35);
+}
+
+.menu i {
+    width: 17px;
+    text-align: center;
+    font-size: 0.82rem;
+    flex-shrink: 0;
+    opacity: 0.75;
+    transition: opacity .15s;
+}
+
+.menu a:hover i  { opacity: 1; }
+.menu a.active i { opacity: 1; color: rgba(255,255,255,0.9); }
+
+/* ── Section dividers ── */
+.menu-section-label {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+    margin: 6px 10px;
+    pointer-events: none;
+    padding: 0;
+    list-style: none;
+}
+
+/* Badges en nav (notificaciones) */
+.menu a span[id] {
+    margin-left: auto;
+}
+
+/* ── Separadores ── */
+.menu li[style*="border-top"],
+.menu li[style*="margin-top: auto"] {
+    border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+    padding-top: 8px !important;
+    margin-top: 8px !important;
+}
+
+/* ── User profile footer ── */
+.user-profile {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.user-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #f0f4fa;
+    flex-shrink: 0;
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
+}
+
+.user-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.user-info div:first-child {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-info div:last-child {
+    font-size: 0.72rem;
+    color: #64748b;
+    margin-top: 1px;
+}
+
+.btn-logout {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(239, 68, 68, 0.07);
+    border: 1px solid rgba(239, 68, 68, 0.12);
+    color: #64748b;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background .15s, color .15s, border-color .15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.btn-logout:hover {
+    background: rgba(239, 68, 68, 0.18);
+    border-color: rgba(239, 68, 68, 0.4);
+    color: #ef4444;
+}
+
+/* ── Overlay ── */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1500;
+}
+
+/* ── Desktop colapso ── */
+body.sidebar-closed .sidebar      { display: none; }
+body.sidebar-closed .main-content { padding-left: 30px; }
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100dvh;
+        width: 260px;
+        display: flex !important;
+        transform: translateX(-100%);
+        transition: transform .25s ease;
+        z-index: 2000;
+        box-shadow: 6px 0 32px rgba(0, 0, 0, 0.6);
+    }
+
+    body.sidebar-open .sidebar {
+        transform: translateX(0);
+    }
+
+    body.sidebar-open .sidebar-overlay {
+        display: block;
+    }
+
+    /* En mobile el colapso de escritorio no aplica */
+    body.sidebar-closed .sidebar      { display: flex !important; transform: translateX(-100%); }
+    body.sidebar-closed .main-content { padding-left: 0; }
+}

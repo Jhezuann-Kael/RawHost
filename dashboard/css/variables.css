@@ -1,0 +1,15 @@
+:root {
+    --primary:      #6366F1;
+    --primary-dark: #4F46E5;
+    --bg-dark:      #0e1628;   /* blue-gray, not pure black */
+    --bg-card:      #16202e;   /* darker, distinctly blue-gray */
+    --text-light:   #d8e4f0;   /* soft blue-white, never harsh */
+    --text-muted:   #7a90a8;   /* blue-gray muted */
+    --success:      #34D399;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

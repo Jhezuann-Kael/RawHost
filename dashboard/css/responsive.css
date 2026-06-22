@@ -1,0 +1,164 @@
+@media (max-width: 1024px) {
+    .servers-grid     { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+    .specs-grid       { grid-template-columns: repeat(2, 1fr) !important; }
+    .grid-layout      { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    body { flex-direction: column; }
+
+    .main-content {
+        padding: 15px;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .header h1 { font-size: 1.4rem; }
+    .header     { margin-bottom: 20px; }
+
+    .servers-grid { grid-template-columns: 1fr; gap: 15px; }
+
+    .server-card { padding: 15px; }
+
+    .server-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .server-specs { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+    .spec { font-size: 0.85rem; }
+
+    .btn { padding: 10px 16px; font-size: 0.9rem; }
+
+    .header .btn {
+        max-width: none !important;
+        width: auto;
+    }
+
+    /* Modals */
+    .modal      { width: 95%; max-width: none; margin: 10px; }
+    .modal-body { padding: 20px; }
+
+    .modal-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-footer .btn { width: 100%; }
+
+    /* Forms */
+    .form-group   { margin-bottom: 15px; }
+    .form-control { font-size: 16px; }
+
+    /* Modal content grids */
+    .duration-grid { grid-template-columns: 1fr; gap: 10px; }
+    .plans-grid    { grid-template-columns: 1fr; }
+    .os-grid       { grid-template-columns: repeat(2, 1fr); }
+
+    /* Tables */
+    .table-responsive,
+    .data-table-container,
+    .content-section {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        scrollbar-width: thin;
+    }
+
+    table       { width: 100%; min-width: 600px; }
+
+    .data-table,
+    .transactions-table { font-size: 0.85rem; }
+
+    .data-table th,
+    .data-table td,
+    .transactions-table th,
+    .transactions-table td { padding: 10px 8px; }
+
+    .data-table th:nth-child(3),
+    .data-table td:nth-child(3),
+    .data-table th:nth-child(4),
+    .data-table td:nth-child(4) { display: none; }
+
+    img, video, iframe { max-width: 100%; height: auto; }
+
+    pre, code {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        max-width: 100%;
+    }
+
+    /* Lists */
+    .item-list li,
+    .vps-mini-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .item-list li .item-badge,
+    .vps-mini-card .vps-status {
+        align-self: flex-start;
+        margin-left: 0;
+    }
+
+    .item-info, .vps-info { width: 100%; }
+
+    /* Profile */
+    .profile-card    { margin: 20px 10px; padding: 20px; }
+
+    .profile-header  {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .profile-avatar  { margin: 0 15px 0 0; width: 60px; height: 60px; font-size: 1.8rem; }
+
+    /* Balance */
+    .balance-card   { padding: 20px; }
+    .balance-amount { font-size: 2rem !important; }
+
+    /* Manage page */
+    .grid-layout        { grid-template-columns: 1fr !important; }
+    .card.full-width    { grid-column: span 1 !important; }
+    .specs-grid         { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
+    .spec-item          { padding: 10px; }
+    .spec-item .value   { font-size: 1rem; }
+    .action-bar         { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
+    .action-btn         { padding: 10px 8px; font-size: 0.85rem; }
+
+    .access-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .access-value { width: 100%; word-break: break-all; }
+
+    .terminal-box { height: 250px !important; }
+
+    #vnc-details > div:last-child {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start !important;
+    }
+
+    .time-progress-container { width: 100px !important; height: 20px !important; }
+    .time-progress-text      { font-size: 0.65rem !important; }
+}
+
+@media (max-width: 480px) {
+    .header h1  { font-size: 1.2rem; }
+    .toggle-btn { margin-right: 10px; }
+    .main-content { padding: 10px; }
+    .server-specs { grid-template-columns: 1fr; }
+    .specs-grid   { grid-template-columns: 1fr !important; }
+    .action-bar   { grid-template-columns: 1fr !important; }
+    .os-grid      { grid-template-columns: 1fr; }
+    .modal        { padding: 15px; }
+    .balance-amount { font-size: 1.5rem !important; }
+}

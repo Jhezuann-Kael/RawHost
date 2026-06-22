@@ -1,0 +1,42 @@
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.header {
+    margin-bottom: 18px;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-right: 15px;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.toggle-btn:hover {
+    color: var(--primary);
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.section-title {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: var(--text-muted);
+}
+
+.servers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+}

@@ -1,0 +1,26 @@
+# robots.txt for RawHost
+# https://rawhost.net/
+
+User-agent: *
+Allow: /
+
+# Public pages
+Allow: /login
+Allow: /register
+Allow: /terms
+Allow: /llms.txt
+
+# Disallow private/admin areas
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /bot/
+Disallow: /daemon/
+Disallow: /includes/
+Disallow: /migrations/
+Disallow: /repositories/
+
+# Sitemap location
+Sitemap: https://rawhost.net/sitemap.xml
+
+# LLM training and AI agents
+LLMs: https://rawhost.net/llms.txt

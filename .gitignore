@@ -1,0 +1,15 @@
+# Sensitive runtime data
+scratch/
+logs/
+uploads/
+
+# Environment / local config overrides
+.env
+*.env
+config.local.php
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp

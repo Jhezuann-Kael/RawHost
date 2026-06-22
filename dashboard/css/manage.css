@@ -1,0 +1,78 @@
+/* ── Manage Page ───────────────────────────────────────────── */
+.header .status-badge { margin-left: 10px; }
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.card.full-width { grid-column: 1 / -1; }
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-title i { color: var(--primary); }
+
+/* ── Terminal ──────────────────────────────────────────────── */
+.terminal-box {
+    background: #000;
+    color: #00ff00;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    height: 180px;
+    overflow-y: auto;
+    position: relative;
+    border: 1px solid #333;
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background: #00ff00;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+}
+
+/* ── Progress / Disk ───────────────────────────────────────── */
+.disk-usage { margin-top: 10px; }
+
+.disk-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    color: var(--text-muted);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--success);
+    border-radius: 4px;
+}

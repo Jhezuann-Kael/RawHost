@@ -1,0 +1,173 @@
+/* ── Server Cards ──────────────────────────────────────────── */
+.server-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.server-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(37, 99, 235, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.server-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+/* ── Status Badges ─────────────────────────────────────────── */
+.status-badge,
+.status-active, .status-running, .status-completed,
+.status-provisioning, .status-pending,
+.status-inactive, .status-stopped, .status-expired,
+.status-failed, .status-answered {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-badge,
+.status-active, .status-running, .status-completed {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.status-provisioning, .status-pending {
+    background: rgba(59, 130, 246, 0.15);
+    color: #3b82f6;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.status-inactive, .status-stopped, .status-expired {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.status-failed {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.status-answered {
+    background: rgba(234, 179, 8, 0.1);
+    color: #eab308;
+    border: 1px solid rgba(234, 179, 8, 0.2);
+}
+
+/* ── Crypto coin colors (shared: VPS payment, Transactions) ── */
+.crypto-usdt:hover, .crypto-usdt.selected { border-color: #26a17b !important; background: rgba(38,161,123,0.1)  !important; color: #26a17b !important; }
+.crypto-btc:hover,  .crypto-btc.selected  { border-color: #f7931a !important; background: rgba(247,147,26,0.1)  !important; color: #f7931a !important; }
+.crypto-eth:hover,  .crypto-eth.selected  { border-color: #627eea !important; background: rgba(98,126,234,0.1)  !important; color: #627eea !important; }
+.crypto-trx:hover,  .crypto-trx.selected  { border-color: #ff060a !important; background: rgba(255,6,10,0.1)    !important; color: #ff060a !important; }
+.crypto-ltc:hover,  .crypto-ltc.selected  { border-color: #bfbbbb !important; background: rgba(191,187,187,0.1) !important; color: #bfbbbb !important; }
+.crypto-bnb:hover,  .crypto-bnb.selected  { border-color: #f3ba2f !important; background: rgba(243,186,47,0.1)  !important; color: #f3ba2f !important; }
+.crypto-usdc:hover, .crypto-usdc.selected { border-color: #2775ca !important; background: rgba(39,117,202,0.1)  !important; color: #2775ca !important; }
+.crypto-doge:hover, .crypto-doge.selected { border-color: #c2a633 !important; background: rgba(194,166,51,0.1)  !important; color: #c2a633 !important; }
+.crypto-pol:hover,  .crypto-pol.selected  { border-color: #8247e5 !important; background: rgba(130,71,229,0.1)  !important; color: #8247e5 !important; }
+.crypto-sol:hover,  .crypto-sol.selected  { border-color: #00ffbd !important; background: rgba(0,255,189,0.1)   !important; color: #00ffbd !important; }
+.crypto-shib:hover, .crypto-shib.selected { border-color: #ffa500 !important; background: rgba(255,165,0,0.1)   !important; color: #ffa500 !important; }
+.crypto-ton:hover,  .crypto-ton.selected  { border-color: #0088cc !important; background: rgba(0,136,204,0.1)   !important; color: #0088cc !important; }
+.crypto-xmr:hover,  .crypto-xmr.selected  { border-color: #ff6600 !important; background: rgba(255,102,0,0.1)   !important; color: #ff6600 !important; }
+.crypto-dai:hover,  .crypto-dai.selected  { border-color: #f4b731 !important; background: rgba(244,183,49,0.1)  !important; color: #f4b731 !important; }
+.crypto-bch:hover,  .crypto-bch.selected  { border-color: #0ac18e !important; background: rgba(10,193,142,0.1)  !important; color: #0ac18e !important; }
+.crypto-not:hover,  .crypto-not.selected  { border-color: #6b7280 !important; background: rgba(107,114,128,0.1) !important; color: #f3f4f6 !important; }
+.crypto-dogs:hover, .crypto-dogs.selected { border-color: #1e90ff !important; background: rgba(30,144,255,0.1)  !important; color: #1e90ff !important; }
+.crypto-xrp:hover,  .crypto-xrp.selected  { border-color: #23292f !important; background: rgba(255,255,255,0.1) !important; color: #ffffff  !important; }
+
+/* ── Card internals ────────────────────────────────────────── */
+.server-name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.server-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.server-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.server-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 12px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+}
+
+.spec {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.spec i    { color: var(--primary); font-size: 0.9rem; }
+.spec span { color: var(--text-light); font-weight: 500; }
+
+.server-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.server-info div { display: flex; align-items: center; gap: 8px; }
+.server-info i   { color: var(--primary); width: 16px; }
+
+.server-actions       { display: flex; gap: 10px; }
+.server-actions .btn  { flex: 1; }
+
+.server-details { list-style: none; margin-bottom: 15px; }
+
+.server-details li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.server-details li span { color: var(--text-light); font-weight: 500; }
+
+.card-actions      { display: flex; gap: 10px; }
+.card-actions .btn { flex: 1; }

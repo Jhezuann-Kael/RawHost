@@ -1,0 +1,18 @@
+# Set MIME types
+AddType text/css .css
+AddType application/javascript .js
+
+# Force correct Content-Type headers
+<FilesMatch "\.(css)$">
+    Header set Content-Type "text/css; charset=utf-8"
+</FilesMatch>
+
+<FilesMatch "\.(js)$">
+    Header set Content-Type "application/javascript; charset=utf-8"
+</FilesMatch>
+
+# Allow access to CSS and JS files
+<FilesMatch "\.(css|js)$">
+    Require all granted
+</FilesMatch>
+

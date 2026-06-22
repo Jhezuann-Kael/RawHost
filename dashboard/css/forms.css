@@ -1,0 +1,56 @@
+.form-group { margin-bottom: 12px; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: #d8e4f0;
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.form-control:focus { border-color: var(--primary); }
+
+.form-select {
+    width: 100%;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: #d8e4f0;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.form-select:focus { border-color: var(--primary); }
+
+/* ── Data Table ── */
+.data-table { width: 100%; border-collapse: collapse; }
+
+.data-table th,
+.data-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.data-table th {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.data-table td { font-size: 0.9rem; }
+.data-table tr:last-child td { border-bottom: none; }

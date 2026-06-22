@@ -1,0 +1,238 @@
+/* ── Modal Overlay & Structure ─────────────────────────────── */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s, visibility 0.25s;
+}
+
+.modal-overlay.active { opacity: 1; visibility: visible; }
+
+.modal {
+    background: var(--bg-card);
+    width: 800px;
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transform: translateY(20px);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-overlay.active .modal { transform: translateY(0); }
+
+.modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.modal-header h2 { margin: 0; font-size: 1.1rem; font-weight: 600; }
+
+.modal-body {
+    padding: 12px 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* ── Duration Cards ────────────────────────────────────────── */
+.duration-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.duration-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.duration-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.duration-card.selected {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.duration-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 4px;
+}
+
+.duration-price {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+/* ── Plan Cards ────────────────────────────────────────────── */
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.plan-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.plan-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.plan-card.selected {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.plan-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.plan-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.plan-specs div { display: flex; align-items: center; gap: 8px; }
+.plan-specs i   { color: var(--primary); width: 16px; }
+
+.plan-price {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* ── OS Cards ──────────────────────────────────────────────── */
+.os-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.os-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.os-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.os-card.selected {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.os-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--primary);
+    transition: color 0.3s;
+}
+
+.os-card.os-windows .os-icon,
+.os-option-card.os-windows .os-icon { color: #00a4ef; }
+
+.os-card.os-ubuntu .os-icon,
+.os-option-card.os-ubuntu .os-icon  { color: #e95420; }
+
+.os-card.os-debian .os-icon,
+.os-option-card.os-debian .os-icon  { color: #d70a53; }
+
+.os-card.os-centos .os-icon,
+.os-option-card.os-centos .os-icon  { color: #9321b6; }
+
+.os-card.os-fedora .os-icon,
+.os-option-card.os-fedora .os-icon  { color: #294172; }
+
+.os-card.os-redhat .os-icon,
+.os-option-card.os-redhat .os-icon  { color: #cc0000; }
+
+.os-name { font-size: 0.9rem; font-weight: 600; color: var(--text-light); }
+
+/* ── Summary Card ──────────────────────────────────────────── */
+.summary-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.95rem;
+}
+
+.summary-row:last-child { border-bottom: none; }
+.summary-row span       { color: var(--text-muted); }
+.summary-row strong     { color: var(--text-light); font-weight: 600; }

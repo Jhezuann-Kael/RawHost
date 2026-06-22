@@ -1,0 +1,4 @@
+ALTER TABLE vps ADD COLUMN plan_id INT AFTER user_id;
+
+ALTER TABLE vps
+ADD CONSTRAINT fk_vps_plan FOREIGN KEY (plan_id) REFERENCES plans (id) ON DELETE SET NULL;
